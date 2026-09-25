@@ -1,0 +1,922 @@
+══════════════ */
+:root {
+  --night: #071a12;
+  --night-2: #0b2b1c;
+  --moss: #557956;
+  --cream-2: #f5ecda;
+}
+
+#announce {
+  background: #06150f;
+  border-bottom: 1px solid rgba(212,168,75,.16);
+  letter-spacing: .5px;
+}
+
+#navbar {
+  background: rgba(250,248,243,.82);
+  transition: background .35s ease, box-shadow .35s ease, transform .35s ease;
+}
+#navbar.scrolled {
+  background: rgba(247,244,235,.94);
+  box-shadow: 0 10px 35px rgba(7,26,18,.14);
+}
+.nav-logo-icon {
+  background: var(--night);
+  overflow: hidden;
+  padding: 4px;
+}
+.nav-logo-icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 9px;
+  mix-blend-mode: screen;
+}
+
+#home {
+  min-height: min(920px, calc(100vh - 107px));
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 76% 40%, rgba(91,143,91,.34) 0, rgba(25,83,48,.12) 27%, transparent 52%),
+    radial-gradient(ellipse at 23% 105%, rgba(7,47,29,.92) 0, transparent 54%),
+    linear-gradient(125deg, #061a11 0%, #0c3020 54%, #123e27 100%);
+}
+#home::before {
+  width: 760px;
+  height: 760px;
+  right: 4%;
+  top: 8%;
+  border: 1px solid rgba(239,219,163,.13);
+  box-shadow: 0 0 0 46px rgba(255,255,255,.012), 0 0 0 92px rgba(255,255,255,.012);
+  opacity: .9;
+}
+#home::after {
+  width: 500px;
+  height: 500px;
+  right: 13%;
+  top: 20%;
+  border-color: rgba(239,219,163,.09);
+}
+.hero-blob {
+  width: 780px;
+  height: 780px;
+  right: -3%;
+  top: 47%;
+  background:
+    radial-gradient(circle, rgba(213,170,75,.13) 0 1%, transparent 2% 17%, rgba(80,139,83,.15) 39%, transparent 70%);
+  filter: blur(.2px);
+}
+.hero-leaves {
+  right: -18px;
+  top: 10%;
+  transform: none;
+  color: #d7b45a;
+  opacity: .09;
+  font-size: 270px;
+  filter: blur(1px);
+}
+.hero-leaves::after {
+  content: '✦  ·  ❋';
+  display: block;
+  color: var(--gold2);
+  font-size: 24px;
+  letter-spacing: 42px;
+  margin: 14px 0 0 -80px;
+}
+.hero-inner {
+  max-width: 1240px;
+  grid-template-columns: minmax(350px, .87fr) minmax(520px, 1.13fr);
+  gap: 18px;
+  padding: 72px 32px 84px;
+  position: relative;
+  z-index: 2;
+}
+.hero-left {
+  position: relative;
+  z-index: 5;
+  animation: cinematicIn .95s cubic-bezier(.2,.7,.2,1) both;
+}
+@keyframes cinematicIn {
+  from { opacity: 0; transform: translate3d(0, 26px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+.hero-eyebrow {
+  background: rgba(255,255,255,.055);
+  border-color: rgba(212,168,75,.45);
+  color: #e7c56d;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 1.35px;
+}
+.hero-h1 {
+  max-width: 620px;
+  font-size: clamp(48px, 6.2vw, 84px);
+  letter-spacing: -.025em;
+  line-height: .94;
+  text-wrap: balance;
+}
+.hero-h1 em { color: #dfb95f; }
+.hero-desc {
+  max-width: 450px;
+  color: rgba(255,255,255,.72);
+  font-size: 15px;
+}
+.hero-pills { gap: 7px; max-width: 500px; }
+.pill {
+  background: rgba(255,255,255,.055);
+  border-color: rgba(255,255,255,.16);
+  color: rgba(255,255,255,.78);
+  font-size: 12px;
+}
+.hero-ctas { margin-top: 4px; }
+.btn-primary {
+  background: linear-gradient(135deg, #b7832e, #e0bd65);
+  box-shadow: 0 12px 30px rgba(184,134,42,.27);
+}
+
+.hero-right {
+  min-height: 550px;
+  display: block;
+  position: relative;
+  animation: cinematicIn 1.1s .13s cubic-bezier(.2,.7,.2,1) both;
+}
+.hero-right::before,
+.hero-right::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+.hero-right::before {
+  inset: 4% 1% 3% 0;
+  background:
+    radial-gradient(ellipse at 50% 48%, rgba(232,198,107,.17), transparent 26%),
+    linear-gradient(108deg, transparent 0 24%, rgba(150,193,114,.08) 24.5% 25%, transparent 25.5% 100%);
+  border-radius: 48% 52% 42% 58%;
+  filter: blur(1px);
+}
+.hero-right::after {
+  width: 280px;
+  height: 280px;
+  right: 1%;
+  bottom: 4%;
+  border-radius: 50%;
+  border: 1px solid rgba(206,172,86,.24);
+  box-shadow: 0 0 0 26px rgba(206,172,86,.045), 0 0 0 54px rgba(206,172,86,.025);
+}
+.hero-scene {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 34px;
+  background:
+    linear-gradient(90deg, rgba(3,18,12,.46), transparent 22% 77%, rgba(3,18,12,.12)),
+    radial-gradient(ellipse at 50% 78%, rgba(13,65,38,.7), transparent 56%);
+  border: 1px solid rgba(255,255,255,.10);
+  box-shadow: inset 0 0 70px rgba(0,0,0,.12), 0 30px 80px rgba(2,16,10,.2);
+  cursor: crosshair;
+}
+.hero-scene::before {
+  content: '';
+  position: absolute;
+  inset: -8%;
+  z-index: 1;
+  background:
+    radial-gradient(ellipse at 8% 105%, rgba(103,153,79,.54) 0 2%, transparent 2.5%),
+    radial-gradient(ellipse at 92% 103%, rgba(87,138,73,.48) 0 2%, transparent 2.5%),
+    repeating-linear-gradient(112deg, transparent 0 70px, rgba(192,203,129,.08) 71px 73px, transparent 74px 145px);
+  transform: translate3d(var(--parallax-x, 0px), var(--parallax-y, 0px), 0);
+  transition: transform .15s linear;
+  pointer-events: none;
+}
+.hero-scene::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(0,0,0,.12), transparent 25% 72%, rgba(0,0,0,.28));
+}
+.hero-characters,
+.hero-character-reveal {
+  position: absolute;
+  width: 126%;
+  max-width: none;
+  left: -13%;
+  bottom: -3%;
+  z-index: 2;
+  pointer-events: none;
+  will-change: transform;
+  transform: translate3d(var(--parallax-x, 0px), var(--parallax-y, 0px), 0);
+  transition: filter .5s ease;
+}
+.hero-characters { filter: saturate(.78) brightness(.62) contrast(1.08); }
+.hero-character-reveal {
+  z-index: 3;
+  opacity: .92;
+  filter: saturate(.96) brightness(1.03);
+  -webkit-mask-image: radial-gradient(ellipse 30% 34% at var(--reveal-x, 50%) var(--reveal-y, 47%), #000 0 20%, rgba(0,0,0,.75) 48%, transparent 80%);
+  mask-image: radial-gradient(ellipse 30% 34% at var(--reveal-x, 50%) var(--reveal-y, 47%), #000 0 20%, rgba(0,0,0,.75) 48%, transparent 80%);
+}
+.hero-product {
+  position: absolute;
+  left: 50%;
+  bottom: 3%;
+  width: min(47%, 280px);
+  height: 77%;
+  transform: translateX(-50%) translateY(var(--product-y, 0px));
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: bottleFloat 5s ease-in-out infinite;
+}
+.hero-product::before {
+  content: '';
+  position: absolute;
+  width: 88%;
+  height: 20%;
+  bottom: 3%;
+  border-radius: 50%;
+  background: rgba(0,0,0,.42);
+  filter: blur(20px);
+}
+.hero-product img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 26px;
+  filter: drop-shadow(0 24px 20px rgba(0,0,0,.38));
+}
+@keyframes bottleFloat {
+  0%, 100% { margin-top: 0; }
+  50% { margin-top: -9px; }
+}
+.hero-foreground {
+  position: absolute;
+  inset: auto -4% -7% -4%;
+  height: 31%;
+  z-index: 7;
+  pointer-events: none;
+  opacity: .78;
+  background:
+    radial-gradient(ellipse at 10% 100%, #315e38 0 7%, transparent 7.5%),
+    radial-gradient(ellipse at 94% 100%, #214b2c 0 9%, transparent 9.5%),
+    linear-gradient(164deg, transparent 0 36%, rgba(182,160,85,.50) 36.5% 37.3%, transparent 37.8% 100%),
+    linear-gradient(21deg, transparent 0 53%, rgba(153,185,111,.34) 53.5% 54.3%, transparent 54.8% 100%);
+  filter: blur(.25px);
+  transform: translate3d(calc(var(--parallax-x, 0px) * -1.35), calc(var(--parallax-y, 0px) * -1.35), 0);
+}
+.hero-scene-label {
+  position: absolute;
+  z-index: 8;
+  top: 21px;
+  left: 24px;
+  color: rgba(255,255,255,.65);
+  font-size: 10px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+.hero-scene-note {
+  position: absolute;
+  z-index: 8;
+  right: 24px;
+  bottom: 20px;
+  color: rgba(255,255,255,.63);
+  font-size: 11px;
+  letter-spacing: .3px;
+}
+.hero-scene-note::before {
+  content: '↗';
+  color: var(--gold2);
+  margin-right: 7px;
+}
+.hero-quick-picks {
+  position: relative;
+  z-index: 9;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 9px;
+  margin-top: 12px;
+}
+.hero-quick-picks .hero-product-card {
+  min-width: 0;
+  padding: 10px 11px;
+  gap: 9px;
+  border-radius: 13px;
+  background: rgba(4,22,14,.56);
+  border-color: rgba(255,255,255,.12);
+}
+.hero-quick-picks .hero-product-card:hover {
+  transform: translateY(-3px);
+}
+.hero-quick-picks .hpc-img {
+  width: 38px;
+  height: 46px;
+  border-radius: 8px;
+}
+.hero-quick-picks .hpc-name {
+  font-size: 11px;
+  white-space: nowrap;
+}
+.hero-quick-picks .hpc-size {
+  font-size: 10px;
+}
+.hero-quick-picks .hpc-price {
+  font-size: 17px;
+}
+.hero-quick-picks .best-pill {
+  display: none;
+}
+.hero-quick-picks .hero-product-card.featured {
+  background: rgba(184,134,42,.18);
+  border-color: rgba(212,168,75,.5);
+}
+.hero-quick-picks .hero-stats {
+  display: none;
+}
+
+/* Add a quiet product proof strip without changing the existing product data. */
+.hero-proof {
+  position: absolute;
+  z-index: 8;
+  left: 24px;
+  bottom: 22px;
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  color: rgba(255,255,255,.72);
+  font-size: 11px;
+  letter-spacing: .5px;
+}
+.hero-proof strong { color: var(--gold2); font-size: 16px; font-family: 'Cormorant Garamond', serif; }
+
+@media (max-width: 900px) {
+  #home { min-height: auto; }
+  .hero-inner {
+    grid-template-columns: 1fr;
+    padding: 60px 22px 54px;
+    gap: 34px;
+  }
+  .hero-left { text-align: center; }
+  .hero-eyebrow, .hero-pills, .hero-ctas { justify-content: center; }
+  .hero-desc { margin-left: auto; margin-right: auto; }
+  .hero-right {
+    display: block;
+    min-height: min(620px, 78vw);
+    width: 100%;
+  }
+  .hero-scene { min-height: 480px; }
+  .hero-product { width: min(38%, 245px); }
+  .hero-characters, .hero-character-reveal { width: 118%; left: -9%; }
+  .hero-quick-picks { gap: 7px; }
+}
+@media (max-width: 600px) {
+  #announce { font-size: 10px; padding: 8px 12px; }
+  .hero-inner { padding: 46px 16px 42px; }
+  .hero-h1 { font-size: clamp(44px, 15vw, 66px); }
+  .hero-desc { font-size: 14px; }
+  .hero-right { min-height: 470px; }
+  .hero-scene { min-height: 440px; border-radius: 24px; }
+  .hero-product { width: 42%; height: 70%; }
+  .hero-characters, .hero-character-reveal { width: 156%; left: -28%; bottom: -2%; }
+  .hero-quick-picks { grid-template-columns: 1fr; margin-top: 9px; }
+  .hero-quick-picks .hero-product-card { padding: 9px 11px; }
+  .hero-quick-picks .hero-product-card:nth-child(3) { display: none; }
+  .hero-scene-label { left: 16px; top: 16px; font-size: 9px; }
+  .hero-scene-note { right: 16px; bottom: 14px; font-size: 9px; }
+  .hero-proof { left: 16px; bottom: 14px; font-size: 9px; }
+  .hero-proof strong { font-size: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hero-left, .hero-right, .hero-product { animation: none; }
+  .hero-scene, .hero-scene::before, .hero-characters, .hero-character-reveal, .hero-foreground {
+    transition: none;
+    transform: none !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- FLOATING WA -->
+<a id="wa-float" href="https://wa.me/919360762925" target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- ANNOUNCE BAR -->
+<div id="announce">
+  <span class="en">🌿 Free Delivery on orders above ₹500 &nbsp;|&nbsp; <span>Results in 45 Days — Guaranteed!</span> &nbsp;|&nbsp; COD Available</span>
+  <span class="ta">🌿 ₹500க்கு மேல் ஆர்டர்களுக்கு இலவச டெலிவரி &nbsp;|&nbsp; <span>45 நாட்களில் மாற்றம் — உறுதி!</span> &nbsp;|&nbsp; COD கிடைக்கும்</span>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a class="nav-logo" href="#home">
+       <div class="nav-logo-icon"><img src="logo.jpeg" alt="JAZ Herbal World logo"></div>
+      <div>
+        <div class="nav-logo-text"><span class="ei">JAZ Herbal World</span><span class="ti">JAZ மூலிகை உலகம்</span></div>
+        <div class="nav-logo-sub"><span class="ei">NATURAL HAIR OIL</span><span class="ti">இயற்கை தலைமுடி எண்ணெய்</span></div>
+      </div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#home"><span class="ei">Home</span><span class="ti">முகப்பு</span></a></li>
+      <li><a href="#products"><span class="ei">Products</span><span class="ti">தயாரிப்புகள்</span></a></li>
+      <li><a href="#why"><span class="ei">Why Us</span><span class="ti">ஏன் நாங்கள்</span></a></li>
+      <li><a href="#reviews"><span class="ei">Reviews</span><span class="ti">மதிப்பீடுகள்</span></a></li>
+      <li><a href="#contact"><span class="ei">Contact</span><span class="ti">தொடர்பு</span></a></li>
+    </ul>
+
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <button class="lang-btn active" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" onclick="setLang('ta')">த</button>
+      </div>
+      <a class="nav-order-btn" href="#order">
+        📲 <span class="ei">Order Now</span><span class="ti">ஆர்டர் செய்</span>
+      </a>
+      <button class="hamburger" onclick="toggleMenu()" id="ham">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mob-menu">
+    <a href="#home" onclick="closeMenu()"><span class="ei">Home</span><span class="ti">முகப்பு</span></a>
+    <a href="#products" onclick="closeMenu()"><span class="ei">Products</span><span class="ti">தயாரிப்புகள்</span></a>
+    <a href="#why" onclick="closeMenu()"><span class="ei">Why Us</span><span class="ti">ஏன் நாங்கள்</span></a>
+    <a href="#reviews" onclick="closeMenu()"><span class="ei">Reviews</span><span class="ti">மதிப்பீடுகள்</span></a>
+    <a href="#contact" onclick="closeMenu()"><span class="ei">Contact</span><span class="ti">தொடர்பு</span></a>
+    <a href="#order" onclick="closeMenu()" style="background:var(--pale);color:var(--green);font-weight:700;">📲 <span class="ei">Order Now</span><span class="ti">ஆர்டர் செய்யுங்கள்</span></a>
+  </div>
+</nav>
+
+<!-- ═══════════════ CINEMATIC HERO ═══════════════ -->
+<section id="home">
+  <div class="hero-blob"></div>
+  <div class="hero-leaves" aria-hidden="true">🌿</div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        🌱 <span class="ei">25+ Powerful Herbs — Traditional Formula</span><span class="ti">25+ சக்திவாய்ந்த மூலிகைகள் — பாரம்பரிய சூத்திரம்</span>
+      </div>
+      <h1 class="hero-h1">
+        <span class="en">Nature's Secret<br>for <em>Beautiful,</em><br>Healthy Hair</span>
+        <span class="ta">அழகான, ஆரோக்கியமான<br>முடிக்கான <em>இயற்கையின்</em><br>ரகசியம்</span>
+      </h1>
+      <p class="hero-desc">
+        <span class="en">JAZ Herbal World brings you a 100% natural hair oil made from 25+ traditional herbs. No chemicals. No side effects. Just real results in 45 days.</span>
+        <span class="ta">JAZ மூலிகை உலகம் உங்களுக்கு 25+ பாரம்பரிய மூலிகைகளால் தயாரிக்கப்பட்ட 100% இயற்கையான தலைமுடி எண்ணெயை கொண்டுவருகிறது. ரசாயனங்கள் இல்லை. பக்க விளைவுகள் இல்லை. 45 நாட்களில் உண்மையான மாற்றம்.</span>
+      </p>
+      <div class="hero-pills">
+        <span class="pill"><span class="ei">✓ Controls Hairfall</span><span class="ti">✓ முடியுதிர்தலை தடுக்கும்</span></span>
+        <span class="pill"><span class="ei">✓ Fights Dandruff</span><span class="ti">✓ பொடுகை சரி செய்யும்</span></span>
+        <span class="pill"><span class="ei">✓ Boosts Volume</span><span class="ti">✓ முடி அடர்த்தி அதிகரிக்கும்</span></span>
+        <span class="pill"><span class="ei">✓ Prevents Greying</span><span class="ti">✓ இளநரை வராமல் தடுக்கும்</span></span>
+      </div>
+      <div class="hero-ctas">
+        <a class="btn-primary" href="#products">
+          🛒 <span class="ei">Shop Now</span><span class="ti">இப்போது வாங்கவும்</span>
+        </a>
+        <a class="btn-ghost" href="#benefits">
+          ✨ <span class="ei">See Benefits</span><span class="ti">பலன்களை காண்க</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-scene" id="hero-scene" aria-label="JAZ Herbal World product scene">
+        <div class="hero-scene-label">JAZ HERBAL WORLD · HERBAL HAIR OIL</div>
+        <img class="hero-characters" src="assets/hero-characters.png" alt="" aria-hidden="true">
+        <img class="hero-character-reveal" src="assets/hero-characters.png" alt="" aria-hidden="true">
+        <div class="hero-product">
+          <img src="250ml.jpeg" alt="JAZ Herbal World 250 ml Herbal Hair Oil bottle">
+        </div>
+        <div class="hero-foreground" aria-hidden="true"></div>
+        <div class="hero-proof"><strong>25+</strong> <span class="ei">herbs in one ritual</span><span class="ti">மூலிகைகள் ஒரே சடங்கில்</span></div>
+        <div class="hero-scene-note"><span class="ei">Move to reveal the glow</span><span class="ti">ஒளியை வெளிப்படுத்த நகர்த்தவும்</span></div>
+      </div>
+      <div class="hero-quick-picks">
+        <a class="hero-product-card" href="#order" onclick="setProduct('Herbal Hair Oil 120ml - ₹195')">
+          <div class="hpc-img"><img src="120ml.jpeg" alt="120ml"></div>
+          <div class="hpc-info">
+            <div class="hpc-name"><span class="ei">Herbal Hair Oil</span><span class="ti">மூலிகை தலைமுடி எண்ணெய்</span></div>
+            <div class="hpc-size"><span class="ei">120 ml — Starter Pack</span><span class="ti">120 ml — தொடக்க பேக்</span></div>
+          </div>
+          <div class="hpc-price">₹195</div>
+        </a>
+        <a class="hero-product-card featured" href="#order" onclick="setProduct('Herbal Hair Oil 250ml - ₹390')">
+          <div class="hpc-img"><img src="250ml.jpeg" alt="250ml"></div>
+          <div class="hpc-info">
+            <div class="hpc-name"><span class="ei">Herbal Hair Oil<span class="best-pill">Best Value</span></span><span class="ti">மூலிகை தலைமுடி எண்ணெய்<span class="best-pill">சிறந்த மதிப்பு</span></span></div>
+            <div class="hpc-size"><span class="ei">250 ml — Family Pack</span><span class="ti">250 ml — குடும்ப பேக்</span></div>
+          </div>
+          <div class="hpc-price">₹390</div>
+        </a>
+        <a class="hero-product-card" href="#order" onclick="setProduct('Herbal Hair Oil 500ml - ₹730')">
+          <div class="hpc-img"><img src="500ml.jpeg" alt="500ml"></div>
+          <div class="hpc-info">
+            <div class="hpc-name"><span class="ei">Herbal Hair Oil</span><span class="ti">மூலிகை தலைமுடி எண்ணெய்</span></div>
+            <div class="hpc-size"><span class="ei">500 ml — Mega Pack</span><span class="ti">500 ml — மெகா பேக்</span></div>
+          </div>
+          <div class="hpc-price">₹730</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PRODUCTS ═══════════════ -->
+<section id="products">
+  <div class="products-inner">
+    <div class="sec reveal">
+      <div class="sec-eyebrow">🛒 <span class="ei">Our Products</span><span class="ti">எங்கள் தயாரிப்புகள்</span></div>
+      <h2 class="sec-title"><span class="en">Choose Your Size</span><span class="ta">உங்கள் அளவை தேர்வு செய்யுங்கள்</span></h2>
+      <p class="sec-sub"><span class="en">All three sizes contain the same powerful 25+ herb formula. Pick what suits your household best.</span><span class="ta">மூன்று அளவுகளும் அதே சக்திவாய்ந்த 25+ மூலிகை சூத்திரத்தை கொண்டுள்ளன.</span></p>
+      <div class="products-grid">
+
+        <!-- 120ml -->
+        <div class="product-card reveal">
+          <div class="product-img-wrap">
+            <img src="120ml.jpeg" alt="120ml Hair Oil" onerror="this.parentNode.innerHTML='🌿'">
+          </div>
+          <div class="product-body">
+            <div class="product-name"><span class="ei">JAZ Herbal Hair Oil</span><span class="ti">JAZ மூலிகை தலைமுடி எண்ணெய்</span></div>
+            <div class="product-size-label"><span class="ei">120 ml — Starter Pack</span><span class="ti">120 ml — தொடக்க பேக்</span></div>
+            <ul class="product-benefits">
+              <li><span class="ei">Controls hair fall effectively</span><span class="ti">முடியுதிர்தலை தடுக்கும்</span></li>
+              <li><span class="ei">Fights dandruff, lice & itch</span><span class="ti">பொடுகு, ஈர் & அரிப்பை சரி செய்யும்</span></li>
+              <li><span class="ei">Promotes new hair growth</span><span class="ti">புதிய முடி வளர்ச்சிக்கு உதவும்</span></li>
+            </ul>
+            <div class="product-footer">
+              <div>
+                <div class="product-price">₹195</div>
+                <div class="product-price-sub"><span class="ei">per bottle</span><span class="ti">ஒரு பாட்டில்</span></div>
+              </div>
+              <button class="buy-btn" onclick="setProduct('Herbal Hair Oil 120ml - ₹195');document.getElementById('order').scrollIntoView({behavior:'smooth'})">
+                📲 <span class="ei">Order</span><span class="ti">ஆர்டர்</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 250ml FEATURED -->
+        <div class="product-card featured-card reveal">
+          <div class="featured-ribbon">⭐ <span class="ei">Best Value</span><span class="ti">சிறந்த மதிப்பு</span></div>
+          <div class="product-img-wrap">
+            <img src="250ml.jpeg" alt="250ml Hair Oil" onerror="this.parentNode.innerHTML='🌿'">
+          </div>
+          <div class="product-body">
+            <div class="product-name"><span class="ei">JAZ Herbal Hair Oil</span><span class="ti">JAZ மூலிகை தலைமுடி எண்ணெய்</span></div>
+            <div class="product-size-label"><span class="ei">250 ml — Family Pack</span><span class="ti">250 ml — குடும்ப பேக்</span></div>
+            <ul class="product-benefits">
+              <li><span class="ei">Controls hair fall effectively</span><span class="ti">முடியுதிர்தலை தடுக்கும்</span></li>
+              <li><span class="ei">Fights dandruff, lice & itch</span><span class="ti">பொடுகு, ஈர் & அரிப்பை சரி செய்யும்</span></li>
+              <li><span class="ei">Promotes new hair growth</span><span class="ti">புதிய முடி வளர்ச்சிக்கு உதவும்</span></li>
+              <li><span class="ei">Repairs split ends</span><span class="ti">நுனி முடிப்பிளவை சரி செய்யும்</span></li>
+            </ul>
+            <div class="product-footer">
+              <div>
+                <div class="product-price">₹390</div>
+                <div class="product-price-sub"><span class="ei">per bottle</span><span class="ti">ஒரு பாட்டில்</span></div>
+              </div>
+              <button class="buy-btn" onclick="setProduct('Herbal Hair Oil 250ml - ₹390');document.getElementById('order').scrollIntoView({behavior:'smooth'})">
+                📲 <span class="ei">Order</span><span class="ti">ஆர்டர்</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 500ml -->
+        <div class="product-card reveal">
+          <div class="product-img-wrap">
+            <img src="500ml.jpeg" alt="500ml Hair Oil" onerror="this.parentNode.innerHTML='🌿'">
+          </div>
+          <div class="product-body">
+            <div class="product-name"><span class="ei">JAZ Herbal Hair Oil</span><span class="ti">JAZ மூலிகை தலைமுடி எண்ணெய்</span></div>
+            <div class="product-size-label"><span class="ei">500 ml — Mega Pack</span><span class="ti">500 ml — மெகா பேக்</span></div>
+            <ul class="product-benefits">
+              <li><span class="ei">Controls hair fall effectively</span><span class="ti">முடியுதிர்தலை தடுக்கும்</span></li>
+              <li><span class="ei">Fights dandruff, lice & itch</span><span class="ti">பொடுகு, ஈர் & அரிப்பை சரி செய்யும்</span></li>
+              <li><span class="ei">Promotes new hair growth</span><span class="ti">புதிய முடி வளர்ச்சிக்கு உதவும்</span></li>
+              <li><span class="ei">Boosts hair volume & strength</span><span class="ti">முடி அடர்த்தி & வலிமை அதிகரிக்கும்</span></li>
+              <li><span class="ei">Best for long-term use</span><span class="ti">நீண்ட கால பயன்பாட்டிற்கு சிறந்தது</span></li>
+            </ul>
+            <div class="product-footer">
+              <div>
+                <div class="product-price">₹730</div>
+                <div class="product-price-sub"><span class="ei">per bottle</span><span class="ti">ஒரு பாட்டில்</span></div>
+              </div>
+              <button class="buy-btn" onclick="setProduct('Herbal Hair Oil 500ml - ₹730');document.getElementById('order').scrollIntoView({behavior:'smooth'})">
+                📲 <span class="ei">Order</span><span class="ti">ஆர்டர்</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ BENEFITS ═══════════════ -->
+<section id="benefits">
+  <div class="benefits-inner reveal">
+    <div class="sec-eyebrow">✨ <span class="ei">What It Does</span><span class="ti">இந்த எண்ணெய் என்ன செய்யும்</span></div>
+    <h2 class="sec-title"><span class="en">7 Proven Benefits</span><span class="ta">7 நிரூபிக்கப்பட்ட பலன்கள்</span></h2>
+    <p class="sec-sub" style="margin-bottom:32px;"><span class="en">A single oil that solves all your hair problems — powered by 25+ traditional herbs.</span><span class="ta">உங்கள் அனைத்து முடி பிரச்சனைகளையும் தீர்க்கும் ஒரே எண்ணெய் — 25+ பாரம்பரிய மூலிகைகளால் ஆனது.</span></p>
+    <div class="benefits-grid">
+      <div class="benefit-card"><span class="benefit-icon">🌱</span><div class="benefit-title"><span class="ei">New Hair Growth</span><span class="ti">புதிய முடி வளர்ச்சி</span></div><div class="benefit-desc"><span class="ei">Promotes new hair growth and repairs split ends</span><span class="ti">புதிய முடி வளர்ச்சியை ஊக்குவிக்கும் மற்றும் நுனி முடிப்பிளவை சரி செய்யும்</span></div></div>
+      <div class="benefit-card"><span class="benefit-icon">🛡️</span><div class="benefit-title"><span class="ei">Dandruff & Lice Free</span><span class="ti">பொடுகு & ஈர் இல்லாமல்</span></div><div class="benefit-desc"><span class="ei">Fights dandruff, lice and scalp itch effectively</span><span class="ti">பொடுகு, ஈர் மற்றும் அரிப்பை திறம்பட சரி செய்யும்</span></div></div>
+      <div class="benefit-card"><span class="benefit-icon">💪</span><div class="benefit-title"><span class="ei">Controls Hairfall</span><span class="ti">முடியுதிர்தல் கட்டுப்பாடு</span></div><div class="benefit-desc"><span class="ei">Reduces and controls excessive hair fall from roots</span><span class="ti">வேர்களிலிருந்து அதிகப்படியான முடியுதிர்தலை குறைக்கும்</span></div></div>
+      <div class="benefit-card"><span class="benefit-icon">✂️</span><div class="benefit-title"><span class="ei">Repairs Split Ends</span><span class="ti">நுனி முடிப்பிளவு சரி</span></div><div class="benefit-desc"><span class="ei">Nourishes and repairs damaged, split hair ends</span><span class="ti">சேதமடைந்த நுனி முடிப்பிளவை சரி செய்யும்</span></div></div>
+      <div class="benefit-card"><span class="benefit-icon">⚫</span><div class="benefit-title"><span class="ei">Prevents Greying</span><span class="ti">இளநரை தடுப்பு</span></div><div class="benefit-desc"><span class="ei">Delays and prevents premature greying of hair</span><span class="ti">இளநரை வராமல் பாதுகாக்கும்</span></div></div>
+      <div class="benefit-card"><span class="benefit-icon">🌟</span><div class="benefit-title"><span class="ei">Boosts Volume</span><span class="ti">முடி அடர்த்தி அதிகரிக்கும்</span></div><div class="benefit-desc"><span class="ei">Increases hair volume and gives natural shine</span><span class="ti">முடி அடர்த்தியை அதிகரிக்கும் மற்றும் இயற்கை பளபளப்பு தரும்</span></div></div>
+      <div class="benefit-card"><span class="benefit-icon">🌿</span><div class="benefit-title"><span class="ei">Strengthens Roots</span><span class="ti">வேர் வலுப்படுத்தும்</span></div><div class="benefit-desc"><span class="ei">Strengthens hair follicles and roots from deep within</span><span class="ti">முடியின் வேர் ஆழமாக வலுப்பெறும்</span></div></div>
+      <div class="benefit-card"><span class="benefit-icon">🧴</span><div class="benefit-title"><span class="ei">25+ Herb Blend</span><span class="ti">25+ மூலிகை கலவை</span></div><div class="benefit-desc"><span class="ei">Traditional formula using 25+ potent natural herbs</span><span class="ti">25+ சக்திவாய்ந்த இயற்கை மூலிகைகளை பயன்படுத்திய பாரம்பரிய சூத்திரம்</span></div></div>
+    </div>
+    <div class="result-bar" style="margin-top:24px;">
+      <span class="result-bar-icon">✨</span>
+      <div>
+        <div class="result-bar-text"><span class="ei">See visible results in just 45 days — Guaranteed!</span><span class="ti">45 நாட்களில் நல்ல மாற்றத்தை உணர்வீர்கள் — உறுதியளிக்கிறோம்!</span></div>
+        <div class="result-bar-sub"><span class="ei">Thousands of happy customers across Tamil Nadu & India</span><span class="ti">தமிழ்நாடு & இந்தியா முழுவதும் ஆயிரக்கணக்கான மகிழ்ச்சியான வாடிக்கையாளர்கள்</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ WHY US ═══════════════ -->
+<section id="why">
+  <div class="why-inner">
+    <div class="sec reveal text-center">
+      <div class="sec-eyebrow">🏆 <span class="ei">Why Choose Us</span><span class="ti">ஏன் நாங்கள்</span></div>
+      <h2 class="sec-title"><span class="en">The JAZ Difference</span><span class="ta">JAZ-இன் சிறப்பு</span></h2>
+      <p class="sec-sub"><span class="en">We don't just sell oil — we deliver a complete natural hair care experience you can trust.</span><span class="ta">நாங்கள் வெறும் எண்ணெய் மட்டும் விற்க மாட்டோம் — நம்பகமான இயற்கையான முடி பராமரிப்பு அனுபவத்தை வழங்குகிறோம்.</span></p>
+    </div>
+    <div class="why-grid reveal">
+      <div class="why-card"><div class="why-card-icon">🌿</div><div class="why-card-title"><span class="ei">100% Natural & Pure</span><span class="ti">100% இயற்கை & தூய்மையான</span></div><div class="why-card-desc"><span class="ei">Zero chemicals, zero preservatives. Only pure herbs sourced directly from nature — exactly as our ancestors used them.</span><span class="ti">ரசாயனங்கள் இல்லை, பதப்படுத்திகள் இல்லை. நேரடியாக இயற்கையிலிருந்து பெறப்பட்ட தூய மூலிகைகள் மட்டுமே.</span></div></div>
+      <div class="why-card"><div class="why-card-icon">🏛️</div><div class="why-card-title"><span class="ei">Siddha & Ayurvedic</span><span class="ti">சித்தா & ஆயுர்வேத</span></div><div class="why-card-desc"><span class="ei">Our formula is rooted in ancient Siddha and Ayurvedic wisdom — time-tested remedies passed down for generations.</span><span class="ti">எங்கள் சூத்திரம் பண்டைய சித்தா மற்றும் ஆயுர்வேத ஞானத்தில் வேர்கொண்டது.</span></div></div>
+      <div class="why-card"><div class="why-card-icon">✅</div><div class="why-card-title"><span class="ei">Quality Tested</span><span class="ti">தரம் சோதிக்கப்பட்டது</span></div><div class="why-card-desc"><span class="ei">Every batch is personally checked for purity, potency, and quality before it reaches your hands.</span><span class="ti">ஒவ்வொரு தொகுப்பும் தூய்மை மற்றும் தரத்திற்காக கவனமாக சரிபார்க்கப்படுகிறது.</span></div></div>
+      <div class="why-card"><div class="why-card-icon">🚚</div><div class="why-card-title"><span class="ei">Fast Doorstep Delivery</span><span class="ti">விரைவான வீட்டு டெலிவரி</span></div><div class="why-card-desc"><span class="ei">Quick and safe delivery across Tamil Nadu and all over India. COD available for your convenience.</span><span class="ti">தமிழ்நாடு மற்றும் இந்தியா முழுவதும் விரைவான டெலிவரி. COD வசதி உள்ளது.</span></div></div>
+      <div class="why-card"><div class="why-card-icon">💰</div><div class="why-card-title"><span class="ei">Genuinely Affordable</span><span class="ti">உண்மையிலேயே மலிவான</span></div><div class="why-card-desc"><span class="ei">Premium quality natural hair oil priced for every Indian household — from ₹170 to ₹680.</span><span class="ti">ஒவ்வொரு இந்திய குடும்பத்திற்கும் ₹170 முதல் ₹680 வரை விலையில் சிறந்த தரமான தயாரிப்பு.</span></div></div>
+      <div class="why-card"><div class="why-card-icon">💬</div><div class="why-card-title"><span class="ei">WhatsApp Support</span><span class="ti">WhatsApp ஆதரவு</span></div><div class="why-card-desc"><span class="ei">Got questions? Our team is available on WhatsApp 9360762925 to guide you personally, every step of the way.</span><span class="ti">கேள்விகள் உள்ளதா? எங்கள் குழு 9360762925 WhatsApp-ல் உங்களுக்கு தனிப்பட்ட வழிகாட்டுதல் அளிக்கிறது.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ HOW TO ORDER ═══════════════ -->
+<section id="order-steps">
+  <div class="steps-inner">
+    <div class="sec reveal text-center">
+      <div class="sec-eyebrow">📦 <span class="ei">How It Works</span><span class="ti">எப்படி செயல்படுகிறது</span></div>
+      <h2 class="sec-title"><span class="en">Order in 4 Easy Steps</span><span class="ta">4 எளிய படிகளில் ஆர்டர் செய்யுங்கள்</span></h2>
+      <p class="sec-sub"><span class="en">From choosing your size to receiving it at your door — it's simple and quick.</span><span class="ta">உங்கள் அளவை தேர்ந்தெடுப்பதிலிருந்து வீட்டு வாசலில் பெறுவது வரை — எளிமையானது மற்றும் விரைவானது.</span></p>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <div class="step-title"><span class="ei">Choose Size</span><span class="ti">அளவை தேர்வு</span></div>
+          <div class="step-desc"><span class="ei">Pick 120ml, 250ml or 500ml from our products above</span><span class="ti">120ml, 250ml அல்லது 500ml தேர்வு செய்யுங்கள்</span></div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <div class="step-title"><span class="ei">Fill Order Form</span><span class="ti">படிவம் நிரப்புங்கள்</span></div>
+          <div class="step-desc"><span class="ei">Enter your name, phone number and delivery address</span><span class="ti">உங்கள் பெயர், தொலைபேசி, முகவரி உள்ளிடுங்கள்</span></div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <div class="step-title"><span class="ei">WhatsApp Confirm</span><span class="ti">WhatsApp உறுதிப்படுத்தல்</span></div>
+          <div class="step-desc"><span class="ei">We confirm your order and total on WhatsApp within minutes</span><span class="ti">சில நிமிடங்களில் WhatsApp-ல் உறுதிப்படுத்துகிறோம்</span></div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">4</div>
+          <div class="step-title"><span class="ei">Pay & Receive</span><span class="ti">பணம் & பெறுங்கள்</span></div>
+          <div class="step-desc"><span class="ei">Pay via UPI or COD. We ship directly to your doorstep!</span><span class="ti">UPI அல்லது COD மூலம் பணம் செலுத்துங்கள். நேரடியாக வீட்டிற்கு அனுப்புகிறோம்!</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ ORDER FORM ═══════════════ -->
+<section id="order">
+  <div class="order-inner">
+    <div class="order-layout">
+      <div class="order-left reveal">
+        <div class="sec-eyebrow">📲 <span class="ei">Place Your Order</span><span class="ti">உங்கள் ஆர்டரை செய்யுங்கள்</span></div>
+        <h2 class="sec-title"><span class="en">Ready to Transform<br>Your Hair?</span><span class="ta">உங்கள் முடியை மாற்ற<br>தயாரா?</span></h2>
+        <p class="sec-sub" style="margin-bottom:0;"><span class="en">Fill in your details and we'll confirm your order on WhatsApp within minutes. Fast, easy, trusted.</span><span class="ta">உங்கள் விவரங்களை நிரப்புங்கள், சில நிமிடங்களில் WhatsApp-ல் உறுதிப்படுத்துகிறோம்.</span></p>
+        <div class="order-trust">
+          <div class="trust-item"><span class="trust-icon">🔒</span><div><div class="trust-title"><span class="ei">Safe & Secure</span><span class="ti">பாதுகாப்பான</span></div><div class="trust-desc"><span class="ei">Your details are only used to process your order. Never shared.</span><span class="ti">உங்கள் விவரங்கள் ஆர்டர் செயலாக்கத்திற்கு மட்டுமே பயன்படுத்தப்படும்.</span></div></div></div>
+          <div class="trust-item"><span class="trust-icon">🚚</span><div><div class="trust-title"><span class="ei">Cash on Delivery Available</span><span class="ti">COD கிடைக்கும்</span></div><div class="trust-desc"><span class="ei">Pay when you receive — no advance needed. UPI also accepted.</span><span class="ti">பெற்ற பிறகு பணம் கொடுங்கள் — முன்பணம் தேவையில்லை.</span></div></div></div>
+          <div class="trust-item"><span class="trust-icon">📞</span><div><div class="trust-title"><span class="ei">Direct WhatsApp Support</span><span class="ti">நேரடி WhatsApp ஆதரவு</span></div><div class="trust-desc"><span class="ei">Call or WhatsApp us anytime: +91 93607 62925</span><span class="ti">எந்த நேரத்திலும் அழைக்கவும்: +91 93607 62925</span></div></div></div>
+        </div>
+      </div>
+
+      <div class="order-form-card reveal">
+        <div class="form-title"><span class="ei">Order Now</span><span class="ti">இப்போது ஆர்டர் செய்யுங்கள்</span></div>
+        <div class="form-sub"><span class="ei">We'll WhatsApp you to confirm within minutes ✓</span><span class="ti">சில நிமிடங்களில் WhatsApp-ல் உறுதிப்படுத்துவோம் ✓</span></div>
+        <div class="fg">
+          <label><span class="ei">Full Name *</span><span class="ti">முழு பெயர் *</span></label>
+          <input type="text" id="f-name" placeholder="Your name">
+        </div>
+        <div class="fg">
+          <label><span class="ei">WhatsApp / Phone *</span><span class="ti">WhatsApp / தொலைபேசி *</span></label>
+          <input type="tel" id="f-phone" placeholder="e.g. 9876543210">
+        </div>
+        <div class="fg">
+          <label><span class="ei">Select Product & Size *</span><span class="ti">தயாரிப்பு & அளவை தேர்வு *</span></label>
+          <select id="f-product">
+            <option value="">-- Choose a product --</option>
+            <option value="Herbal Hair Oil 120ml - ₹195">Herbal Hair Oil — 120ml (₹195)</option>
+            <option value="Herbal Hair Oil 250ml - ₹390">Herbal Hair Oil — 250ml (₹390) ⭐ Best Value</option>
+            <option value="Herbal Hair Oil 500ml - ₹730">Herbal Hair Oil — 500ml (₹730)</option>
+          </select>
+        </div>
+        <div class="fg-row">
+          <div class="fg">
+            <label><span class="ei">Quantity *</span><span class="ti">எண்ணிக்கை *</span></label>
+            <input type="number" id="f-qty" value="1" min="1">
+          </div>
+          <div class="fg">
+            <label><span class="ei">Payment Method</span><span class="ti">பணம் செலுத்தும் முறை</span></label>
+            <select id="f-pay">
+              <option value="Cash on Delivery (COD)"><span class="ei">Cash on Delivery</span></option>
+              <option value="UPI">UPI</option>
+            </select>
+          </div>
+        </div>
+        <div class="fg">
+          <label><span class="ei">Delivery Address *</span><span class="ti">டெலிவரி முகவரி *</span></label>
+          <textarea id="f-addr" rows="3" placeholder="House No, Street, City, Pincode"></textarea>
+        </div>
+        <div class="fg">
+          <label><span class="ei">Notes (optional)</span><span class="ti">குறிப்புகள் (விரும்பினால்)</span></label>
+          <textarea id="f-notes" rows="2" placeholder="Any special instructions or questions"></textarea>
+        </div>
+        <button class="submit-btn" onclick="sendOrder()">
+          📲 <span class="ei">Send Order via WhatsApp</span><span class="ti">WhatsApp மூலம் ஆர்டர் அனுப்பு</span>
+        </button>
+        <p class="form-note"><span class="ei">Your order goes directly to our team at +91 93607 62925</span><span class="ti">உங்கள் ஆர்டர் எங்கள் குழுவிற்கு நேரடியாக செல்கிறது</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ REVIEWS ═══════════════ -->
+<section id="reviews">
+  <div class="reviews-inner">
+    <div class="sec reveal text-center">
+      <div class="sec-eyebrow">💬 <span class="ei">Customer Reviews</span><span class="ti">வாடிக்கையாளர் மதிப்பீடுகள்</span></div>
+      <h2 class="sec-title"><span class="en">Real Results. Real People.</span><span class="ta">உண்மையான மாற்றங்கள். உண்மையான மக்கள்.</span></h2>
+      <p class="sec-sub"><span class="en">Join thousands of happy customers across Tamil Nadu and India who have transformed their hair.</span><span class="ta">தமிழ்நாடு மற்றும் இந்தியா முழுவதும் முடியை மாற்றிய ஆயிரக்கணக்கான மகிழ்ச்சியான வாடிக்கையாளர்களுடன் சேருங்கள்.</span></p>
+      <div class="reviews-grid">
+        <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text"><span class="ei">"My hair fall stopped completely within 6 weeks! This oil is truly a miracle. Works better than any expensive branded oil I have ever used. 100% natural and smells amazing."</span><span class="ta">"6 வாரங்களில் என் முடி உதிர்வு முற்றிலும் நின்றது! இந்த எண்ணெய் உண்மையிலேயே அற்புதமானது. இதுவரை பயன்படுத்திய விலையுயர்ந்த எந்த எண்ணெயையும் விட சிறந்தது."</span></p><div class="review-author"><div class="author-avatar">P</div><div><div class="author-name">Priya S.</div><div class="author-loc">Chennai</div></div></div></div>
+        <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text"><span class="ei">"I had severe dandruff for years. After just one month of using JAZ Herbal Oil, my scalp is completely clean. Delivery was super fast and packaging was excellent!"</span><span class="ta">"பல ஆண்டுகளாக கடுமையான பொடுகு இருந்தது. ஒரு மாதம் JAZ எண்ணெய் பயன்படுத்திய பிறகு என் தலையணை முற்றிலும் சுத்தமாக உள்ளது. டெலிவரியும் மிக வேகமாக இருந்தது!"</span></p><div class="review-author"><div class="author-avatar">R</div><div><div class="author-name">Ramesh K.</div><div class="author-loc">Coimbatore</div></div></div></div>
+        <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text"><span class="ei">"My mother uses this for her greying hair. After 45 days we can already see new black hair growing back. Amazing product from JAZ Herbal World! Highly recommended."</span><span class="ta">"என் அம்மா இளநரைக்கு இதை பயன்படுத்துகிறார். 45 நாட்களில் புதிய கருமையான முடி வளர்வதை பார்க்க முடிகிறது. மிகவும் பரிந்துரைக்கிறேன்!"</span></p><div class="review-author"><div class="author-avatar">K</div><div><div class="author-name">Kavitha M.</div><div class="author-loc">Madurai</div></div></div></div>
+        <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text"><span class="ei">"Ordered the 500ml pack — incredible value for money! My hair feels noticeably thicker and stronger. The WhatsApp team responds instantly. Will order again!"</span><span class="ta">"500ml பேக் ஆர்டர் செய்தேன் — அபாரமான மதிப்பு! முடி கணிசமாக தடிமனாகவும் வலுவாகவும் உணர்கிறது. WhatsApp குழு உடனடியாக பதில் அளிக்கிறது!"</span></p><div class="review-author"><div class="author-avatar">S</div><div><div class="author-name">Suresh R.</div><div class="author-loc">Tirunelveli</div></div></div></div>
+        <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text"><span class="ei">"Split ends are completely gone and my hair has so much volume now! You can actually smell the fresh herbs — genuinely 100% natural. Very trustworthy brand."</span><span class="ta">"நுனி முடிப்பிளவு முற்றிலும் சரியாகிவிட்டது, முடியில் இப்போது நிறைய அடர்த்தி இருக்கிறது! இயற்கையான மூலிகை வாசனை வருகிறது — உண்மையிலேயே 100% இயற்கை."</span></p><div class="review-author"><div class="author-avatar">A</div><div><div class="author-name">Anitha P.</div><div class="author-loc">Salem</div></div></div></div>
+        <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text"><span class="ei">"Absolute best herbal hair oil I have ever used in my life. The team answered all my questions patiently on WhatsApp. Will definitely recommend to my whole family!"</span><span class="ta">"நான் இதுவரை பயன்படுத்திய சிறந்த மூலிகை தலைமுடி எண்ணெய். குழு என் அனைத்து கேள்விகளுக்கும் பொறுமையாக பதில் அளித்தது. என் குடும்பம் முழுவதற்கும் பரிந்துரைப்பேன்!"</span></p><div class="review-author"><div class="author-avatar">M</div><div><div class="author-name">Murugan T.</div><div class="author-loc">Trichy</div></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CONTACT ═══════════════ -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="sec reveal text-center">
+      <div class="sec-eyebrow">📞 <span class="ei">Get In Touch</span><span class="ti">தொடர்பு கொள்ளுங்கள்</span></div>
+      <h2 class="sec-title"><span class="en">We're Here to Help</span><span class="ta">நாங்கள் உதவ இங்கே இருக்கிறோம்</span></h2>
+      <p class="sec-sub"><span class="en">Have questions about our products? We're always happy to help — reach out anytime!</span><span class="ta">எங்கள் தயாரிப்புகளைப் பற்றி கேள்விகள் உள்ளதா? நாங்கள் எப்போதும் உதவ மகிழ்ச்சியாக இருக்கிறோம்!</span></p>
+      <div class="contact-grid">
+        <a class="contact-card" href="https://wa.me/919360762925" target="_blank"><span class="contact-icon">📲</span><div class="contact-label"><span class="ei">WhatsApp Us</span><span class="ti">WhatsApp செய்யுங்கள்</span></div><div class="contact-val">+91 93607 62925</div></a>
+        <a class="contact-card" href="tel:+919360762925"><span class="contact-icon">📞</span><div class="contact-label"><span class="ei">Call Us</span><span class="ti">அழைக்கவும்</span></div><div class="contact-val">+91 93607 62925</div></a>
+        <a class="contact-card" href="https://instagram.com/JAZ_HERBALWORLD" target="_blank"><span class="contact-icon">📸</span><div class="contact-label">Instagram</div><div class="contact-val">@JAZ_HERBALWORLD</div></a>
+        <div class="contact-card" style="cursor:default;"><span class="contact-icon">🕐</span><div class="contact-label"><span class="ei">Working Hours</span><span class="ti">வேலை நேரம்</span></div><div class="contact-val"><span class="ei">Mon–Sat: 9AM – 7PM</span><span class="ti">திங்கள்–சனி: காலை 9 – மாலை 7</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">🌿 JAZ Herbal World</div>
+    <div class="footer-links">
+      <a href="#home"><span class="ei">Home</span><span class="ti">முகப்பு</span></a>
+      <a href="#products"><span class="ei">Products</span><span class="ti">தயாரிப்புகள்</span></a>
+      <a href="#why"><span class="ei">Why Us</span><span class="ti">ஏன் நாங்கள்</span></a>
+      <a href="#reviews"><span class="ei">Reviews</span><span class="ti">மதிப்பீடுகள்</span></a>
+      <a href="#contact"><span class="ei">Contact</span><span class="ti">தொடர்பு</span></a>
+    </div>
+    <p class="footer-copy"><span class="ei">© 2025 JAZ Herbal World. All rights reserved. &nbsp;|&nbsp; @JAZ_HERBALWORLD &nbsp;|&nbsp; +91 93607 62925</span><span class="ta">© 2025 JAZ மூலிகை உலகம். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.</span></p>
+  </div>
+</footer>
+
+<script>
+/* ─── LANGUAGE ─── */
+function setLang(l) {
+  const b = document.body, btns = document.querySelectorAll('.lang-btn');
+  if (l === 'ta') { b.classList.add('tamil'); btns[0].classList.remove('active'); btns[1].classList.add('active'); }
+  else { b.classList.remove('tamil'); btns[0].classList.add('active'); btns[1].classList.remove('active'); }
+}
+
+/* ─── MOBILE MENU ─── */
+function toggleMenu() {
+  const m = document.getElementById('mob-menu');
+  m.classList.toggle('open');
+}
+function closeMenu() {
+  document.getElementById('mob-menu').classList.remove('open');
+}
+
+/* ─── NAVBAR SCROLL ─── */
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
+  // Active nav link
+  const sections = ['home','products','benefits','why','order','reviews','contact'];
+  let cur = '';
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && window.scrollY >= el.offsetTop - 120) cur = id;
+  });
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
+  });
+});
+
+/* ─── HERO PARALLAX + SOFT CURSOR REVEAL ───
+   The generated artwork contains no cursor. The reveal is entirely
+   controlled here and gracefully falls back to a calm composition on touch. */
+const heroScene = document.getElementById('hero-scene');
+if (heroScene && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const pointer = { x: 50, y: 48, tx: 50, ty: 48 };
+  let frame;
+  const renderHero = () => {
+    pointer.x += (pointer.tx - pointer.x) * 0.075;
+    pointer.y += (pointer.ty - pointer.y) * 0.075;
+    const px = (pointer.x - 50) * 0.1;
+    const py = (pointer.y - 50) * 0.08;
+    heroScene.style.setProperty('--reveal-x', `${pointer.x}%`);
+    heroScene.style.setProperty('--reveal-y', `${pointer.y}%`);
+    heroScene.style.setProperty('--parallax-x', `${px}px`);
+    heroScene.style.setProperty('--parallax-y', `${py}px`);
+    frame = requestAnimationFrame(renderHero);
+  };
+  heroScene.addEventListener('pointermove', (event) => {
+    const box = heroScene.getBoundingClientRect();
+    pointer.tx = ((event.clientX - box.left) / box.width) * 100;
+    pointer.ty = ((event.clientY - box.top) / box.height) * 100;
+  }, { passive: true });
+  heroScene.addEventListener('pointerleave', () => {
+    pointer.tx = 50;
+    pointer.ty = 48;
+  }, { passive: true });
+  renderHero();
+  window.addEventListener('pagehide', () => cancelAnimationFrame(frame), { once: true });
+}
+
+/* ─── SCROLL REVEAL ─── */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+/* ─── SET PRODUCT ─── */
+function setProduct(val) {
+  setTimeout(() => { document.getElementById('f-product').value = val; }, 100);
+}
+
+/* ─── ORDER VIA WHATSAPP ─── */
+function sendOrder() {
+  const name = document.getElementById('f-name').value.trim();
+  const phone = document.getElementById('f-phone').value.trim();
+  const product = document.getElementById('f-product').value;
+  const qty = document.getElementById('f-qty').value || '1';
+  const pay = document.getElementById('f-pay').value;
+  const addr = document.getElementById('f-addr').value.trim();
+  const notes = document.getElementById('f-notes').value.trim();
+  if (!name || !phone || !product || !addr) {
+    alert('Please fill all required fields (*)');
+    return;
+  }
+  const msg =
+    `🌿 *New Order — JAZ Herbal World*\n\n` +
+    `👤 *Name:* ${name}\n` +
+    `📞 *Phone:* ${phone}\n` +
+    `🛒 *Product:* ${product}\n` +
+    `📦 *Quantity:* ${qty}\n` +
+    `💳 *Payment:* ${pay}\n` +
+    `📍 *Address:* ${addr}` +
+    (notes ? `\n📝 *Notes:* ${notes}` : '') +
+    `\n\n_Order placed via JAZ Herbal World website_`;
+  window.open('https://wa.me/919360762925?text=' + encodeURIComponent(msg), '_blank');
+}
+</script>
+</body>
+</html>
